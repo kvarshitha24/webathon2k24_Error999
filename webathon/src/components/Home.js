@@ -124,7 +124,7 @@ function Home() {
               <div className="row row-cols-1 row-cols-md-4 g-12 mt-4 mb-3 mx-2">
                 <div className="col mb-4">
                   <div className="card c1 h-100 p-3 " style={{ backgroundColor: "#ece5db" }} >
-                    <img src={h1} className="card-img-top" alt="..." width=" 238px"
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/014/618/920/small/test-administrator-illustration-concept-a-flat-illustration-isolated-on-white-background-vector.jpg" className="card-img-top" alt="..." width=" 238px"
                       height=" 185px" />
                     <div className="card-body">
                       <h5 className="Apple">Why We Exist</h5>
@@ -135,7 +135,7 @@ function Home() {
                 </div>
                 <div className="col mb-4">
                   <div className="card c1 h-100 p-3 " style={{ backgroundColor: "#ece5db" }}>
-                    <img src={h3} className="card-img-top" alt="..." width=" 238px"
+                    <img src="https://img.freepik.com/free-vector/online-testing-banner_107791-3684.jpg" className="card-img-top" alt="..." width=" 238px"
                       height=" 185px" />
                     <div className="card-body">
                       <h5 className="Apple">Why PrepQuest</h5>
@@ -146,7 +146,7 @@ function Home() {
                 </div>
                 <div className="col mb-4">
                   <div className="card c1 h-100 p-3 " style={{ backgroundColor: "#ece5db" }} >
-                    <img src={h4} className="card-img-top" alt="..." width=" 238px"
+                    <img src="https://www.shutterstock.com/image-illustration/3d-education-mock-test-exam-260nw-2133924155.jpg" className="card-img-top" alt="..." width=" 238px"
                       height=" 185px" />
                     <div className="card-body">
                       <h5 className="Apple">Our Mission</h5>
@@ -157,7 +157,7 @@ function Home() {
                 </div>
                 <div className="col mb-4">
                   <div className="card c1 h-100 p-3 " style={{ backgroundColor: "#ece5db" }}>
-                    <img src={h5} className="card-img-top" alt="..." width=" 238px"
+                    <img src="https://media.istockphoto.com/id/1398462038/photo/online-exam-or-test.jpg?s=612x612&w=0&k=20&c=hvaH_2oA0Dm-tpQ8T5JBF_39QF3xhpic38Yi2AngaCE=" className="card-img-top" alt="..." width=" 238px"
                       height=" 185px" />
                     <div className="card-body">
                       <h5 className="Apple">Join Our Community</h5>
