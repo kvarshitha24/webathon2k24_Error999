@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Test.css';
 import { useNavigate } from 'react-router-dom';
+import { HiSpeakerWave } from "react-icons/hi2";
+
 const Sidebar = ({ mcqData, currentQuestionIndex, setCurrentQuestionIndex, selectedOptions }) => {
     return (
-        <div style={{ width: '180px', position: 'fixed', right: '20px', top: '70px',marginTop: '110px', }}>
+        <div style={{ width: '180px', position: 'fixed', right: '20px', top: '70px', marginTop: '110px', }}>
             {mcqData.map((question, index) => (
                 <button
                     key={index}
@@ -69,7 +71,10 @@ const Test = () => {
             "options": ["Kangaroo", "Koala", "Platypus", "Emu"]
         }
     ]);
-
+    const speakQuestion = (question) => {
+        const utterance = new SpeechSynthesisUtterance(question);
+        window.speechSynthesis.speak(utterance);
+    };
     const [timeLeft, setTimeLeft] = useState((mcqData.length) * 15); // Initial time left for testing purpose
     const [timerRunning, setTimerRunning] = useState(false);
     const [quizStarted, setQuizStarted] = useState(false); // Track if quiz has started
@@ -160,7 +165,7 @@ const Test = () => {
                 {quizStarted && mcqData.map((question, index) => {
                     if (index === currentQuestionIndex) {
                         return (
-                            <div key={index} style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '20px', textAlign: 'left', marginRight: "220px",marginLeft:"30px"}}>
+                            <div key={index} style={{ position: 'relative', border: '1px solid #ccc', padding: '10px', marginBottom: '20px', textAlign: 'left', marginRight: "220px", marginLeft: "30px" }}>
                                 <h3>{question.question}</h3>
                                 <form>
                                     {question.options.map((option, optionIndex) => (
@@ -176,15 +181,32 @@ const Test = () => {
                                             <label htmlFor={`option${optionIndex}`} style={{ marginLeft: '5px' }}>{option}</label>
                                         </div>
                                     ))}
+                                    <button
+                                        type="button"
+                                        onClick={() => speakQuestion(question.question)}
+                                        style={{
+                                            position: 'absolute',
+                                            top: 20,
+                                            right: 20,
+                                            border: '1px solid #ccc', // Light border
+                                            borderRadius: '8px', // Rounded corners
+                                            padding: '10px 20px', // Increased padding for size
+                                            background: 'transparent', // Transparent background
+                                            cursor: 'pointer', // Cursor style
+                                        }}
+                                    >
+                                        <HiSpeakerWave /> {/* Assuming this component renders an icon */}
+                                    </button>
                                 </form>
                                 {/* {currentQuestionIndex !== mcqData.length - 1 && (
-                                    <button onClick={handleNextQuestion}>Next</button>
-                                )} */}
+                    <button onClick={handleNextQuestion}>Next</button>
+                )} */}
                             </div>
                         );
                     }
                     return null;
                 })}
+
                 {timerRunning && currentQuestionIndex !== mcqData.length - 1 && <button onClick={handleNextQuestion}
                     style={{
                         padding: '10px 20px',
@@ -197,7 +219,7 @@ const Test = () => {
                         fontWeight: 'bold',
                         transition: 'background-color 0.3s ease',
                         textDecoration: 'none',
-                        marginRight:'20px'
+                        marginRight: '20px'
                     }}
                 >
                     Next
@@ -218,7 +240,7 @@ const Test = () => {
                 >
                     Submit
                 </button>}
-                
+
 
                 {showSidebar && (
                     <Sidebar
