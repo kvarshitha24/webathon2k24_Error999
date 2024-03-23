@@ -1,0 +1,32 @@
+/* Add these styles to your CSS file */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+  }
+  
+  .with-popup {
+    position: relative;
+  }
+  
+  .popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100vw; /* Set the width to 100% of viewport width */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .with-popup:hover .popup {
+    display: block;
+  }
+  
+  /* Add this style to display text inside the popup */
+  .popup p {
+    
+    color: black;
+  }
+  
