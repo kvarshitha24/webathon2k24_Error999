@@ -153,7 +153,7 @@ const Test = () => {
                 </ul>
             </div>
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-                <h1>Quiz</h1>
+                <h1>MOCK TEST</h1>
                 <div style={{ position: 'absolute', top: 70, right: 10, fontSize: "30px" }}>
                     {timeOver && <div>Time is over!</div>}
                 </div>
